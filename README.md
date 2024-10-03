@@ -13,12 +13,23 @@ Special thanks to [BluRaf](https://mastodon.sdf.org/@BluRaf) for providing suppo
 
 * If you mute the USB audio device, the WonderSwan will consider the headphones as disconnected, re-enabling the internal speaker.
 
-## Build Instructions
+### Using TransMagic with ExtFriend on Linux
+
+    # Install Source Han Sans font, alias it to Microsoft Japanese fonts
+    $ winetricks sourcehansans fakejapanese
+    
+    # Connect USB ExtFriend device to Wine virtual COM1 port
+    $ ln -s /dev/ttyACM0 ~/.wine/dosdevices/com1
+    
+    # Run TransMagic
+    $ LANG=ja_JP.UTF-8 wine TransMagic.exe
+
+## Firmware build instructions
 
 * Copy `pico_sdk_import.cmake` from your Pico-SDK installation to the repository's root.
 * Run `mkdir build`, `cd build`, `cmake ..`, `make`.
 
-## Installation Instructions (Raspberry Pi Pico)
+## Hardware build instructions (Raspberry Pi Pico)
 
 ![ExtFriend plugged into a SwanCrystal using a soldered header.](https://img.asie.pl/PTC3.jpg)
 
@@ -32,6 +43,7 @@ Special thanks to [BluRaf](https://mastodon.sdf.org/@BluRaf) for providing suppo
     * EXT HDPN_LRCK - Pico pin 6 (GP4)
     * EXT HDPN_SDAT - Pico pin 5 (GP3)
     * EXT /HDPN_DETECT - Pico pin 4 (GP2)
+
 
 If you don't have an EXT port plug or cable handy, you can use an HDMI breakout board. An example instruction guide is provided [here](https://twitter.com/peca_port0/status/1631569109912817667) (in Japanese), for a $2 AliExpress board.
 
