@@ -13,7 +13,13 @@ Special thanks to [BluRaf](https://mastodon.sdf.org/@BluRaf) for providing suppo
 
 * If you mute the USB audio device, the WonderSwan will consider the headphones as disconnected, re-enabling the internal speaker.
 
-### Using TransMagic with ExtFriend on Linux
+### Using TransMagic with ExtFriend
+
+#### Windows
+
+You need to set your USB device's serial port to COM1-COM7 for compatibility with TransMagic. See [this article](https://kb.plugable.com/serial-adapter/how-to-change-the-com-port-for-a-usb-serial-adapter-on-windows-7,-8,-81,-and-10) for more information.
+
+#### Linux
 
     # Install Source Han Sans font, alias it to Microsoft Japanese fonts
     $ winetricks sourcehansans fakejapanese
