@@ -15,8 +15,8 @@ set(PICO_BOARD pico CACHE STRING "Board type")
 # Pull in Raspberry Pi Pico SDK (must be before project)
 include(pico_sdk_import.cmake)
 
-if (PICO_SDK_VERSION_STRING VERSION_LESS "1.4.0")
-  message(FATAL_ERROR "Raspberry Pi Pico SDK version 1.4.0 (or later) required. Your version is ${PICO_SDK_VERSION_STRING}")
+if (PICO_SDK_VERSION_STRING VERSION_LESS "2.0.0")
+  message(FATAL_ERROR "Raspberry Pi Pico SDK version 2.0.0 (or later) required. Your version is ${PICO_SDK_VERSION_STRING}")
 endif()
 
 project(extfriend C CXX ASM)
@@ -38,8 +38,7 @@ pico_generate_pio_header(extfriend ${CMAKE_CURRENT_LIST_DIR}/headphone_pio.pio)
 pico_set_program_name(extfriend "ExtFriend for WS")
 pico_set_program_version(extfriend "0.1")
 
-# no_flash means the target is to run from RAM
-# pico_set_binary_type(extfriend no_flash)
+pico_set_binary_type(extfriend copy_to_ram)
 
 pico_enable_stdio_uart(extfriend 1)
 pico_enable_stdio_usb(extfriend 0)

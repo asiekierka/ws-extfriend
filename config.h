@@ -20,7 +20,7 @@
 
 #include "boards/pico.h"
 
-#define MEMPHIS_DEBUG
+// #define MEMPHIS_DEBUG
 #define MEMPHIS_DEBUG_UART_TX_PIN 8
 #define MEMPHIS_DEBUG_UART_RX_PIN 9
 #define MEMPHIS_LED_PIN PICO_DEFAULT_LED_PIN

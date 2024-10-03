@@ -49,7 +49,7 @@ int main() {
     ws_uart_init();
 
     multicore_launch_core1(core_tud);
-    while (true) {}
+    while (true) { __wfi(); }
 
     return 0;
 }

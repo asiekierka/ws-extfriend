@@ -33,7 +33,9 @@ You need to set your USB device's serial port to COM1-COM7 for compatibility wit
 ## Firmware build instructions
 
 * Copy `pico_sdk_import.cmake` from your Pico-SDK installation to the repository's root.
+  * For example, `cp /usr/share/pico-sdk/external/pico_sdk_import.cmake .`
 * Run `mkdir build`, `cd build`, `cmake ..`, `make`.
+* To flash onto an RP2040, `picotool load extfriend.uf2`.
 
 ## Hardware build instructions (Raspberry Pi Pico)
 
