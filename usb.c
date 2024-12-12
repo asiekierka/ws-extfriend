@@ -320,10 +320,9 @@ bool tud_audio_tx_done_pre_load_cb(uint8_t rhport, uint8_t itf, uint8_t ep_in, u
   (void) ep_in;
   (void) cur_alt_setting;
 
-  int i = 50000;
-  while (i > 0 && headphone_buffer_idx == headphone_buffer_idx_usb) i--;
-  tud_audio_write(&headphone_buffer[MEMPHIS_WS_HEADPHONE_BUFFER_SAMPLES * headphone_buffer_idx_usb], CFG_TUD_AUDIO_EP_SZ_IN); 
-  headphone_buffer_idx_usb = (headphone_buffer_idx_usb + 1) % MEMPHIS_WS_HEADPHONE_BUFFER_ENTRIES;  
+  tud_audio_write(&headphone_buffer[MEMPHIS_WS_HEADPHONE_BUFFER_SAMPLES * headphone_buffer_idx_usb], MEMPHIS_WS_HEADPHONE_BUFFER_FRAMES * CFG_TUD_AUDIO_FUNC_1_N_BYTES_PER_SAMPLE_TX * CFG_TUD_AUDIO_FUNC_1_N_CHANNELS_TX); 
+  if (headphone_buffer_idx != headphone_buffer_idx_usb)
+      headphone_buffer_idx_usb = (headphone_buffer_idx_usb + 1) % MEMPHIS_WS_HEADPHONE_BUFFER_ENTRIES;
 
   return true;
 }
