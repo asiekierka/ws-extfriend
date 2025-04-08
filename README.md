@@ -2,7 +2,7 @@
 
 ExtFriend is a USB adapter for the WonderSwan's EXT port based on the RP2040 chip and the Raspberry Pi Pico board, providing the following features at a low cost:
 
-* A USB serial port communicating with the WonderSwan at 9600 and 38400 baud,
+* A USB serial port communicating with the WonderSwan at 9600, 38400 and 192000 baud,
 * A USB audio device allowing digital stereo audio capture from the WonderSwan.
 
 Both features can be active simultaneously - for example, this could allow one to control a WonderSwan as an audio synthesizer.
@@ -12,6 +12,7 @@ Special thanks to [BluRaf](https://mastodon.sdf.org/@BluRaf) for providing suppo
 ## Tips
 
 * If you mute the USB audio device, the WonderSwan will consider the headphones as disconnected, re-enabling the internal speaker.
+* The ExtFriend automatically rounds down your selected baud rate to the closest frequency supported by the console; for example, 19200 baud is treated as 9600 baud, 57600 baud is treated as 38400 baud, and 230400 baud is treated as 19200 baud.
 
 ### Using TransMagic with ExtFriend
 
