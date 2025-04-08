@@ -350,7 +350,7 @@ bool tud_audio_set_itf_close_EP_cb(uint8_t rhport, tusb_control_request_t const 
 // CDC callbacks
 
 void tud_cdc_line_coding_cb(uint8_t itf, cdc_line_coding_t const* p_line_coding) {
-  uart_set_baudrate(uart0, p_line_coding->bit_rate >= 19200 ? 38400 : 9600);
+  uart_set_baudrate(uart0, p_line_coding->bit_rate >= 192000 ? 192000 : (p_line_coding->bit_rate >= 38400 ? 38400 : 9600));
 }
 
 void tud_cdc_rx_cb(uint8_t itf) {
