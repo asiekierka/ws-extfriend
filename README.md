@@ -53,8 +53,12 @@ You need to set your USB device's serial port to COM1-COM7 for compatibility wit
     * EXT HDPN_SDAT - Pico pin 5 (GP3)
     * EXT /HDPN_DETECT - Pico pin 4 (GP2)
 
+If you don't have an EXT port plug or cable handy, you can use an HDMI breakout board.
 
-If you don't have an EXT port plug or cable handy, you can use an HDMI breakout board. An example instruction guide is provided [here](https://twitter.com/peca_port0/status/1631569109912817667) (in Japanese), for a $2 AliExpress board.
+### Build resources
+
+* (Japanese) An example instruction guide is provided [here](https://twitter.com/peca_port0/status/1631569109912817667), using a $2 AliExpress board for HDMI breakout.
+* (Japanese) STL data and build photos for an ExtFriend case using an RP2040-Zero is provided [here](https://x.com/SourceK_mnst/status/1934752361358217708).
 
 ## License
 
